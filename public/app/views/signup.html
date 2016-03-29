@@ -1,0 +1,22 @@
+<div ng-controller="signup">
+<form ng-submit="createUser()">
+	<legend>Sign Up</legend><legend>{{Message}}</legend>
+
+
+	<div class="form-group">
+		<label for="">Username</label>
+		<input type="text" class="form-control" id="" ng-model="signup.username">
+		<label for="">Password</label>
+		<input type="password" class="form-control" id="" ng-model="p1" ng-change="check()">
+		<label for="">Password Confirm</label>
+		<input type="password" class="form-control" id="" ng-model="p2" ng-change="check()">
+		<label for="">Email</label>
+		<input type="email" class="form-control" id="" ng-model="signup.email" >
+		<label for="">Location</label>
+		<input type="text" class="form-control" id="" ng-model="signup.location">
+	</div>
+
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

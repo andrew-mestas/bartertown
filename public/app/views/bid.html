@@ -1,0 +1,27 @@
+<div ng-controller="bidCtrl">
+
+	<div class="container">
+  <h2>My Current Bids</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Offered</th>
+        <th>To Person</th>
+        <th>For Item</th>
+        <th>Accepted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="offer in offers">
+        <td>{{offer.Offered.name}}</td>
+        <td>{{offer.Wanted.ownedBy}}</td>
+        <td>{{offer.Wanted.name}}</td>
+        <td>{{offer.Status}}</td>
+      </tr>     
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>

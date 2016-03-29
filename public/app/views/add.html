@@ -1,0 +1,39 @@
+<div ng-controller="addItem">
+
+
+
+<form ng-submit="submit()">
+	<legend>Add A New Item to Barter</legend>
+	<legend>{{message}}</legend>
+
+	<div class="input-group">
+  		<span class="input-group-addon" id="sizing-addon2">Name</span>
+		<input type="text" class="form-control" id="" ng-model="item.name">
+	</div>
+	<div class="input-group">
+  		<span class="input-group-addon" id="sizing-addon2">Location</span>
+  		<input type="text" class="form-control" aria-describedby="sizing-addon2" ng-model="item.location">
+	</div>
+	<div class="input-group">
+  		<span class="input-group-addon" id="sizing-addon2">Trade For</span>
+  		<input type="text" class="form-control" aria-describedby="sizing-addon2" ng-model="item.tradeFor">
+	</div>
+	<div class="form-group">
+  		<span class="input-group-addon" id="sizing-addon2">Description</span>
+  		<input type="text" class="form-control" aria-describedby="sizing-addon2" ng-model="item.description">
+	</div>
+	
+<h2>Example Listing - Is this ok?</h2>
+<div class="well">
+		Name: {{item.name}}<br>
+		Will Trade For: {{item.tradeFor}}<br><hr>
+		Owner: {{item.ownedBy}}<br>
+		Location: {{item.location}}<br>
+		Description: {{item.description}}
+</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+</div>

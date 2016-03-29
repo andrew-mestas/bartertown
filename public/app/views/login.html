@@ -1,0 +1,83 @@
+
+<div ng-controller="loginCtrl">
+
+	<div ng-show="!isLoggedIn()">
+	  <h1>Login</h1>
+
+		<form ng-submit="getAuth()">
+			<legend>{{Message}}</legend>
+
+			<div class="form-group">
+				<label for="">Username</label>
+				<input type="text" class="form-control" id="" ng-model="name">
+			</div>
+			<div class="form-group">
+				<label for="">Password</label>
+				<input type="password" class="form-control" id="" ng-model="p1" ng-change="check()">
+			</div>
+			<div class="form-group">
+				<label for="">Password Confirm</label>
+				<input type="password" class="form-control" id="" ng-model="p2" ng-change="check()">
+			</div>
+			
+
+			<button class="btn btn-primary">Submit</button>
+			<h4>New to Bartering Town? <a href="signup">Sign Up</a></h4>
+		</form>
+	</div>
+
+	<div ng-show="isLoggedIn()">
+	  <h1>{{MyName}}'s Items for Barter</h1>
+	  	<h2>Count: {{items.length}}</h2><legend>{{message}}</legend>
+
+
+			<div class="row">
+			  <div class="col-sm-6 col-md-4" ng-repeat="item in items">
+			    <div class="thumbnail">
+			      <!-- <img src="..." alt="..."> -->
+			      <div class="caption">
+			       <input type="text" class="form-control" id="" ng-model="item.name" ng-if="editable">
+					<h4>{{item.name}}</h4> 			
+					<input type="text" class="form-control" id="" ng-model="item.tradeFor" ng-if="editable">
+					<h4> Will Trade For: {{item.tradeFor}}</h4><br><hr>
+					<h5>Owner: {{item.ownedBy}}</h5>
+					<input type="text" class="form-control" id="" ng-model="item.location" ng-if="editable">
+					<h5>Location: {{item.location}}</h5><hr>
+					<input type="text" class="form-control" id="" ng-model="item.description" ng-if="editable">
+					<h5>Description: {{item.description}}</h5><br>			
+					<h5>Accepted? {{item.accepted}}</h5>	
+					<h5>Bids In: {{item.bidsCurrentlyIn}}</h5>
+
+				<div class="btn btn-danger"  ng-click="save()" ng-if="editable">Save</div>
+				<div class="btn btn-success" ng-click="editable = !editable">Edit</div>
+				<div class="btn btn-danger" ng-click="del()" ng-if="item.bidsCurrentlyIn == 0">Delete</div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+
+
+
+<!-- 		<div ng-repeat="item in items">
+			<div class="">
+				<input type="text" class="form-control" id="" ng-model="item.name" ng-if="editable">
+				Name: {{item.name}}<br>				
+				<input type="text" class="form-control" id="" ng-model="item.tradeFor" ng-if="editable">
+				Will Trade For: {{item.tradeFor}}<br><hr>
+				Owner: {{item.ownedBy}}<br>
+				<input type="text" class="form-control" id="" ng-model="item.location" ng-if="editable">
+				Location: {{item.location}}<br>
+				<input type="text" class="form-control" id="" ng-model="item.description" ng-if="editable">
+				Description: {{item.description}}<br>				
+
+				<div class="btn btn-danger"  ng-click="save()" ng-if="editable">Save</div>
+				<div class="btn btn-success" ng-click="editable = !editable" >Edit</div>
+
+				<div class="btn btn-danger" ng-click="del()" >Delete</div>
+			</div>
+		</div> -->
+	</div>
+
+</div>

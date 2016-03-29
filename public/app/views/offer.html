@@ -1,0 +1,27 @@
+<div ng-controller="offerCtrl">
+
+	<div class="container">
+  <h2>Current Offers to Me</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Person</th>
+        <th>Offered</th>
+        <th>For Item</th>
+        <th>Accept?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="offer in offers">
+        <td>{{offer.Offered.ownedBy}}</td>
+        <td>{{offer.Offered.name}}</td>
+        <td>{{offer.Wanted.name}}</td>
+        <td><div class="btn btn-success">Accept Offer</div></td>
+      </tr>     
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>
